@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Projects Data
+		</title>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="styles.css"/>  
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+		<div class="container" id="div1">
+			<h2>Projects </h2><i class="fa fa-question-circle-o question1" ></i>
+		<a href="project1/addproject.html" class="btn btn-primary addBtn"id="addButton" >+ Add new Projects</a><br/>
+
+			<input type="text" class="inputs"id="search-input"placeholder="Search By Project or Client name">
+			<!-- <button type="button" class="text-primary addbtn" onchange="activeBtn()" title="clear selection">
+				<div class="sub-menu-1">
+					<ul>
+						<li><a href='#'target="_blank">All</a></li>
+						<li>Archived</li>
+						<li>Active options</li>
+					</ul>
+			</div> -->
+			<select class="addbtn" id="optn" onchange="activeBtn()" title="clear selection">
+				<option>&#128436; All</option>
+				<option>Archived</option>
+				<option>Active options</option>
+			</select>
+				<!-- &nbsp;<i class="fa fa-hdd-o"></i>&nbsp;Active&nbsp;</button> -->
+			<button class="text-primary border-0 addBtn1"  onclick="fnExportHTMLtoExcel('tableID')"title="Export to Excel" id="mytable">&nbsp;<i class="fa fa-download"></i>&nbsp;Export&nbsp;</button>
+			<button class="text-primary border-0 addBtn2" title="Select">&nbsp;<i class="fa fa-database" ></i>&nbsp;&nbsp;Group by:None&nbsp;&nbsp;<i class="fa fa-caret-down">
+				<div class="sub-menu">
+						<ul>
+							<li>
+								<div  id="active" >Clients</div>
+							</li>
+						</ul>
+				</div>
+			</i></button>
+		<br/><br/>
+		<form action="/" method="post" name="form">
+			<table class="table text-secondary" id="tableID" >
+				<thead class="thead">
+					<tr class="trow">
+						<th >
+							<input type="checkbox" name="checkall" onchange="checkAll()">
+							<label>NAME</label>
+						</th>
+						<th data-colname="client"data-order="desc">
+							<label>CLIENT</label>
+						</th>
+						<th data-colname="totalhours"data-order="desc">
+							<label>TOTAL HOURS</label>
+						</th>
+						<th data-colname="ba"data-order="desc">
+							<label>BILLABLE AMOUNT&nbsp;&nbsp;&nbsp;&nbsp;BUDGET SPENT</label>
+						</th>
+						<th data-colname="created"data-order="desc">
+							<label>CREATED&nbsp; &darr;</label>
+						</th>
+						<th data-colname="status"data-order="desc">
+							<label>STATUS</label>
+						</th>
+						<th data-colname="action"data-order="desc">
+							<label>ACTION</label>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+					<tr id="tbody1">
+						<td>
+							<span>P3</span>
+						</td>
+						<td >
+							<span>c1</span>
+						</td>
+						<td >
+							<span>0H</span>
+						</td>
+						<td style="text-align: center;">
+							<span><i class="fa fa-inr"></i>0.00</span>
+						</td>
+						<td>
+							<span>20-01-2021</span>
+						</td>
+						<td >
+							<span >Active</span>
+						</td>
+						<td >
+							<i class="fa fa-pencil" ></i>&nbsp;&nbsp;
+							<i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+							<i class="fa fa-archive"></i>
+						</td>
+					</tr>
+					<tr>
+						<td >
+							<span>P2</span>
+						</td>
+						<td >
+							<span>c2</span>
+						</td>
+						<td >
+							<span>0H</span>
+						</td>
+						<td>
+							<span><i class="fa fa-inr"></i>0.00</span>
+						</td>
+						<td >
+							<span>19-01-2021</span>
+						</td>
+						<td >
+							<span >Active</span>
+						</td>
+						<td 
+						>
+							<i class="fa fa-pencil" ></i>&nbsp;&nbsp;
+							<i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+							<i class="fa fa-archive"></i>
+						</td>
+					</tr>
+					<tr>
+						<td >
+							<span>P1</span>
+						</td>
+						<td >
+							<span>c1</span>
+						</td>
+						<td >
+							<span>43H</span>
+						</td>
+						<td>
+							<span><i class="fa fa-inr"></i>0.00</span>
+						</td>
+						<td >
+							<span>19-01-2021</span>
+						</td>
+						<td >
+							<span >Active</span>
+						</td>
+						<td>
+							<i class="fa fa-pencil"></i>&nbsp;&nbsp;
+							
+							<i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+							
+							<i class="fa fa-archive" ></i>
+						</div>
+						</td>
+					</tr>
+				</tbody>
+		</table>
+	</form>
+		</div>
+		<div class="mainbody" id="div2">
+			<div class="container">
+				<table class="table text-secondary table1" >
+					<thead class="header">
+						<tr>
+							<th >
+								<input type="checkbox"  >&nbsp;&nbsp;
+								<label>NAME</label>
+							</th>
+							<th >
+								<label>TOTAL HOURS</label>
+							</th>
+							<th >
+								<label>BILLABLE AMOUNT&nbsp;&nbsp;&nbsp;&nbsp;BUDGET SPE...</label>
+							</th>
+							<th >
+								<label>CREATED&nbsp; &darr;</label>
+							</th>
+							<th >
+								<label>STATUS</label>
+							</th>
+							<th >
+								<label>ACTION</label>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr >
+							<td>
+								<div class="mydiv1"><i class="fa fa-caret-down"></i>&nbsp;&nbsp;Client:c1</div>
+							</td>
+						</tr>
+						<tr class="tr1">
+							<td>
+								<span>P3</span>
+							</td>
+							<td >
+								<span>0H</span>
+							</td>
+							<td >
+								<span><i class="fa fa-inr"></i>0.00</span>
+							</td>
+							<td>
+								<span>20-01-2021</span>
+							</td>
+							<td >
+								<span >Active</span>
+							</td>
+							<td >
+								<i class="fa fa-pencil" ></i>&nbsp;&nbsp;
+								<i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+								<i class="fa fa-archive"></i>
+							</td>
+						</tr>
+						<tr class="tr2">
+							<td >
+								<span>P1</span>
+							</td>
+							<td >
+								<span>43H</span>
+							</td>
+							<td>
+								<span><i class="fa fa-inr"></i>0.00</span>
+							</td>
+							<td >
+								<span>19-01-2021</span>
+							</td>
+							<td >
+								<span >Active</span>
+							</td>
+							<td>
+								<i class="fa fa-pencil"></i>&nbsp;&nbsp;
+								
+								<i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+								
+								<i class="fa fa-archive" ></i>
+							</td>
+						</tr>
+						<tr >
+							<td>
+								<div class="mydiv2"><i class="fa fa-caret-down"></i>&nbsp;&nbsp;Client:c2</div>
+							</td>
+						</tr>
+						<tr class="tr3">
+							<td >
+								<span>P2</span>
+							</td>
+							<td >
+								<span>0H</span>
+							</td>
+							<td>
+								<span><i class="fa fa-inr"></i>0.00</span>
+							</td>
+							<td >
+								<span>19-01-2021</span>
+							</td>
+							<td >
+								<span >Active</span>
+							</td>
+							<td>
+								<i class="fa fa-pencil" ></i>&nbsp;&nbsp;
+								<i class="fa fa-clipboard"></i>&nbsp;&nbsp;
+								<i class="fa fa-archive"></i>
+							</td>
+						</tr>
+		
+					</tbody>
+			</table>
+		</div>
+		</div>
+		
+		
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<html>
+    <head>
+		<title>Add new project</title>
+		<link rel="stylesheet" href="style.css"/>  
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="div3" style="margin-left: 3%;">
+			<h2>Add Project</h2><i class="fa fa-question-circle-o"style="display:inline-block;position:absolute;color:skyblue;left:20%;top:2%;" ></i><br/>
+			<label>NAME</label><br/>
+			<input type="text" placeholder="Enter name of the project..." /><br/><br/>
+			<label>CLIENT</label><br/>
+			<input id="client" placeholder="Select..." class="input1"><i class="fa fa-caret-right" style="margin-left: -2%;" ></i>
+			<form id="newForm">
+			<div class="table_body" >
+					<input type="text" id="search" placeholder="Search..."/>
+					<label class="fa fa-search searchspan"></label><br/>
+					<ul style="list-style: none;" class="ul" id="nameOutput">
+						<li class="client">
+							<span>c1</span>
+						</li>
+						<li class="client">
+							<span >c2</span>
+						</li>
+						<li class="client">
+							<span >c3</span>
+						</li>
+					</ul>
+					<span>&nbsp;</span>
+					<span>&nbsp;</span>
+					<span>&nbsp;</span>
+					<span>&nbsp;</span><br/>
+					<input type="button" class="style1" value="+ Create new " onclick="displayName()">
+					<input type="button" onclick="newFunction()"class="style2" value="&times;Clear">
+				</form>	
+				</div>
+			</input><br/>
+			<!-- Description -->
+			<label>DESCRIPTION</label><br/>
+			<div style="border:1px solid lightgray;width:40.1%;padding:3px;">
+				<span>&nbsp;&nbsp;<i class="fa fa-bold"></i>&nbsp;&nbsp;<i class="fa fa-italic"></i>&nbsp;&nbsp;<i class="fa fa-link"></i>&nbsp;&nbsp;<i class="fa fa-list-ul"></i>&nbsp;&nbsp;
+					<i class="fa fa-list-ol"></i>&nbsp;&nbsp;<i class="fa fa-quote-right"></i></span><span style="background-color: lightgray;border-radius: 2px;margin-left:65%;">Aa</span>
+			</div>
+			<textarea rows="4" cols="72">&nbsp;Edit project description...</textarea><br/><br/>
+
+			<!-- Billable -->
+			<div class="adding1" id="billable"><span style="font-weight: bold;font-size:22px;">Billable Settings</span>
+				&nbsp;<i class="fa fa-caret-down downBtn"></i><br/><small class="small">Not billable</small></div><br/>
+
+		<!-- approval -->
+			<div class="adding" id="approval"><span style="font-weight: bold;font-size:22px;">Approval Settings</span>
+				&nbsp;<i class="fa fa-caret-down"></i><br/><small>Approval is not required</small></div><br/>
+		<!-- buttons -->
+				<button class="btn btn-primary">Save</button>&nbsp;&nbsp;
+				<button>Cancel</button>
+		</div>
+		<!-- billable -->
+		<div id="div5">
+			<div>
+				<h5 style="font-weight: bold;">Billable settings&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i></h5>
+			</div>
+				<div class="billable1"><br/>
+					<input type="radio" name="bill1"style="position: absolute;left: -10%;top:14%;" />
+					<label style="position: relative;left: 15%;top:5%">
+						<span class="bill1">Not billable</span><br/><br/>
+						<p style="color: lightgrey;">Time logs will not be billed to the client.</p>
+					</label>
+				</div><br/>
+				<div class="billable1"><br/>
+					<input type="radio" name="bill1" style="position: absolute;left: -10%;top:32%;"/>
+					<label style="position: relative;left: 15%;top:5%">
+						<span class="bill1">Billable:project rate</span><br/><br/>
+						<p style="color: lightgrey;">All time logs in this project will have the same hourly rate.</p>
+					</label>
+				</div><br/>
+				<div class="billable1"><br/>
+					<input type="radio" name="bill1" style="position: absolute;left: -10%;top:50%;"/>
+					<label style="position: relative;left: 15%;top:5%">
+						<span class="bill1">Billable:task-based rate</span><br/><br/>
+						<p style="color: lightgrey;">Set hourly rates on the task-level.Each task can have a different rate.</p>
+					</label>
+				</div><br/>
+				<div class="billable1"><br/>
+					<input type="radio" name="bill1" style="position: absolute;left: -10%;top:69%;"/>
+					<label style="position: relative;left: 15%;top:5%">
+						<span class="bill1">Billable:member-based rate</span><br/><br/>
+						<p style="color: lightgrey;">Set hourly rates on the member-level.Each member can have a different rate.</p>
+					</label>
+				</div><br/>
+				<span style="color: gray;">
+					<h6 style="font-weight: bold;">Rounding of time</h6>
+					<p style="font-size: 14px;color: rgb(117, 117, 117);">Automatically round log's duration for billing purposes (rounded duration).  <br/>Actual duration is preserved.</p>
+				</span>
+				<div >
+					<select style="color: gray;resize: horizontal;width:55%;padding:3px;border: 1px solid lightgray;">
+						<option>No rounding</option>
+					</select>
+				</div>
+		</div>
+		<!-- approval -->
+		<div  class="app" id="div4">
+			<h6 style="font-weight: bold;">Approval settings&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i></h6>
+			<small>Time logs will appear as "pending".</small><br/><br/>
+			<small style="font-weight: bold;"><input type="checkbox" style="position: relative;left:-50px"/><span style="position: relative;left:-92px">Required approval of time logs</span></small>
+		</div>
+		<script src="scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+
+.addBtn{
+	display: inline-block;
+	position: absolute;
+	top:2%;
+	right:12%;
+	height:35px;
+}
+.addBtn1{
+	background-color: white;
+	position: absolute;
+	right: 25%;
+}
+.addBtn2{
+	background-color: white;
+	position: absolute;
+	right: 11%;
+}
+.inputs{
+	resize: horizontal;
+	width:25%;
+	color: lightgray;
+	border:1px solid lightgray;
+	border-radius: 3px;
+}
+::placeholder{
+	color:lightgray;
+}
+.addbtn{
+	border:1px solid skyblue;
+	background-color: white;
+	border-radius: 3px;
+	margin-left: 2%;
+}
+.table{
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+}
+i{
+	cursor: pointer;
+}
+.sub-menu{
+	display: none;
+}
+.addBtn2:focus .sub-menu{
+	display: block;
+	position: absolute;
+	background: white;
+	margin-top: 10px;
+	margin-left:-35%;
+	box-shadow:1px 1px 2px lightgrey;
+}
+.sub-menu ul{
+	display: block;
+	margin: 10px;
+}
+.addBtn2:focus .sub-menu ul li{
+	list-style: none;
+	width:60px;
+	padding:10px;
+	border-radius: 2px;
+	text-align: center;
+}
+li:hover{
+	text-decoration: none;
+	
+	
+}
+ul li #active:hover{
+	text-decoration: none;
+}
+li:hover{
+	background-color: #d7d7d7 ;
+}
+.question1{
+	display: inline-block;
+	position: absolute;
+	top:2%;
+	left:20%;
+	color:skyblue;
+}
+.sub-menu-1{
+	display: none;
+}
+.addbtn:focus .sub-menu-1{
+	display: block;
+	position: absolute;
+	background: white;
+	margin-top: 24px;
+	box-shadow:1px 1px 2px lightgrey;
+}
+.sub-menu-1 ul{
+	display: block;
+	margin: 10px;
+}
+.addbtn:focus .sub-menu-1 ul li{
+	list-style: none;
+	width:150px;
+	padding:10px;
+	border-radius: 2px;
+	text-align: center;
+}
+li:hover{
+	text-decoration: none;	
+}
+ul li a:hover{
+	text-decoration: none;
+}
+li:hover{
+	background-color: #d7d7d7 ;
+}
+.thead:hover{
+	background-color: #f2f2f2;
+}
+#tbody tr:hover{
+	background-color: lightgrey;
+}
+#chk1,#chk2,#chk3{
+	display:none;
+}
+
+/* client page css */
+
+.table1{
+	background-color: white;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter;
+	margin-top:15% ;
+}
+.mydiv1,.mydiv2{
+	background-color: #cbe6f7;
+	width:850%;
+	padding:5px;
+	margin-top:-12px;
+}
